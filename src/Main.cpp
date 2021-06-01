@@ -1,4 +1,5 @@
 #include <iostream>
+#include "lib/hotkeymanager.hpp"
 
 //its the main code, what a shocker
 int main() {
