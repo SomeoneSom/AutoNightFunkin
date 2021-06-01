@@ -14,7 +14,6 @@ namespace HotkeyManager {
     } CallbackThing;
     extern std::vector<CallbackThing> allTheCallbacks;
     extern bool alreadyDown__;
-    extern HHOOK kbHook__;
     int loopThing();
 };
 #endif

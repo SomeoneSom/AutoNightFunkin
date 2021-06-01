@@ -7,7 +7,6 @@ members ending in '__' should be seen as "private"*/
 #include <iostream>
 std::vector<HotkeyManager::CallbackThing> HotkeyManager::allTheCallbacks = {};
 bool HotkeyManager::alreadyDown__ = false;
-HHOOK HotkeyManager::kbHook__ = 0;
 int HotkeyManager::loopThing() {
     bool temp = false;
     for (int i = 0; i < allTheCallbacks.size(); i++) {
