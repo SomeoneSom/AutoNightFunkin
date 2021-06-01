@@ -8,4 +8,6 @@ install(TARGETS AutoNightFunkin RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/export)
 # testing
 enable_testing()
 add_subdirectory(tests)
-add_test(NAME HotkeyTest COMMAND  $<TARGET_FILE:HotkeyTester>)
+add_test(NAME HotkeyManagerTest COMMAND  $<TARGET_FILE:HotkeyManagerTest>)
+add_test(NAME KeyPresserPressTest COMMAND  $<TARGET_FILE:KeyPresserPressTest>)
+add_test(NAME KeyPresserHoldTest COMMAND  $<TARGET_FILE:KeyPresserHoldTest>)

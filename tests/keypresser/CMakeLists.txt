@@ -1,0 +1,5 @@
+add_executable(KeyPresserPressTest presstest.cpp)
+add_executable(KeyPresserHoldTest holdtest.cpp)
+include_directories(../../src/lib)
+target_link_libraries(KeyPresserPressTest KeyPresser)
+target_link_libraries(KeyPresserHoldTest KeyPresser winmm.lib)
