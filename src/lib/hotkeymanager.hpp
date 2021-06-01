@@ -4,6 +4,7 @@ members ending in '__' should be seen as "private"*/
 #include <windows.h>
 #include <iostream>
 #include <vector>
+#include <thread>
 #ifndef HOTKEYMANAGER_HPP
 #define HOTKEYMANAGER_HPP
 namespace HotkeyManager {
@@ -11,10 +12,7 @@ namespace HotkeyManager {
         int (* funcToCall)();
         int keyCode;
     } CallbackThing;
-    BOOL CALLBACK ctrlCHandler__(DWORD);
     extern std::vector<CallbackThing> allTheCallbacks;
-    int init();
-    LRESULT CALLBACK callbackKing__(int code, WPARAM w, LPARAM l);
     extern bool alreadyDown__;
     extern HHOOK kbHook__;
     int loopThing();
