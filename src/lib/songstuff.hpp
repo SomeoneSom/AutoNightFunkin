@@ -10,8 +10,8 @@ members ending in '__' should be seen as "private"*/
 namespace SongStuff {
     typedef struct Note {
         int key;
-        int time;
-        int holdTime;
+        double time;
+        double holdTime;
     } Note;
     std::vector<Note> loadSongFromJSON(std::string filename);
 }
