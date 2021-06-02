@@ -34,6 +34,7 @@ bool TheActualBot::MiniBotsManager::checkIfTheyAreDone() {
 int TheActualBot::MiniBotsManager::start() {
     for (int i = 0; i < miniBots.size(); i++) {
         miniBotThreads.push_back(std::shared_ptr<std::thread>(new std::thread(whyErrorC2280__, miniBots.at(i))));
+        miniBotThreads.at(i)->detach();
     }
     return 0;
 }

@@ -5,6 +5,7 @@ project(AutoNightFunkin
     VERSION 0.0.1)
 add_subdirectory(src)
 install(TARGETS AutoNightFunkin RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/export)
+install(TARGETS Calibrator RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/export)
 # testing
 enable_testing()
 add_subdirectory(tests)
