@@ -3,6 +3,7 @@ virtually presses keys but to the json
 members ending in '__' should be seen as "private"*/
 #include "lib/theactualbot.hpp"
 #include "lib/songstuff.hpp"
+#include "lib/keypresser.hpp"
 #include <vector>
 #include <windows.h>
 TheActualBot::MiniBotsManager::MiniBotsManager(std::vector<WORD> controls, std::vector<SongStuff::Note> notes) {
