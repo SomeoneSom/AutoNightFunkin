@@ -28,7 +28,6 @@ int main() {
     timeBeginPeriod(veryImportantTimerThing.wPeriodMin);
     std::cout << "Calibrating..." << std::endl;
     HotkeyManager::allTheCallbacks.push_back({addToThings, 0x87});
-    KeyPresser::setup();
     TheActualBot::MiniBotsManager manager({0x87, 0x45, 0x46, 0x47}, calibrationJsonIGuess);
     manager.start();
     start = std::chrono::steady_clock::now();

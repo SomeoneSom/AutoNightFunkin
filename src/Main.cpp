@@ -107,7 +107,6 @@ int main() {
     HotkeyManager::allTheCallbacks.push_back({changeControls, 0x73});
     HotkeyManager::allTheCallbacks.push_back({startStop, 0x74});
     HotkeyManager::allTheCallbacks.push_back({nowBeDone, 0x51});
-    KeyPresser::setup();
     while (!areWeDoneYet) {
         if (started) {
             if (!anotherFlag && manager->checkIfTheyAreDone()) {

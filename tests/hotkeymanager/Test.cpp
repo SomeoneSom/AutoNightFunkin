@@ -5,16 +5,17 @@
 #include <thread>
 #include <chrono>
 int result = 0;
+KeyPresser::KeyPresser * presser = nullptr;
 void helper(WORD key) {
     Sleep(500);
-    KeyPresser::pressKey(key);
+    presser->pressKey(key);
 }
 int ifItWorks() {
     result--;
     return 0;
 }
 int main() {
-    KeyPresser::setup();
+    presser = new KeyPresser::KeyPresser();
     HotkeyManager::allTheCallbacks.push_back({ifItWorks, 0x41});
     std::thread helperThing(helper, 0x41);
     std::chrono::steady_clock::time_point start = std::chrono::steady_clock::now();

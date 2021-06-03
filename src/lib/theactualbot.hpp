@@ -13,6 +13,7 @@ namespace TheActualBot {
     class MiniBot {
         private:
             WORD keyToPress;
+            KeyPresser::KeyPresser * presser;
         public:
             bool shouldIStopYet;
             std::vector<SongStuff::Note> notesVector;

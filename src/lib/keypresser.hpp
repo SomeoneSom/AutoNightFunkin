@@ -5,11 +5,15 @@ members ending in '__' should be seen as "private"*/
 #ifndef KEYPRESSER_HPP
 #define KEYPRESSER_HPP
 namespace KeyPresser {
-    extern INPUT virtKeyboard__;
-    void setup();
-    void pressKey(WORD key);
-    void holdKey(WORD key, DWORD milliseconds);
-    void keyDown__(WORD key);
-    void keyUp__(WORD key);
+    class KeyPresser {
+        private:
+            void keyDown__(WORD key);
+            void keyUp__(WORD key);
+            INPUT virtKeyboard__;
+        public:
+            KeyPresser();
+            void pressKey(WORD key);
+            void holdKey(WORD key, DWORD milliseconds);
+    };
 }
 #endif

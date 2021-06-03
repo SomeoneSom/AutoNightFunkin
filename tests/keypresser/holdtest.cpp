@@ -3,9 +3,10 @@
 #include <chrono>
 #include <iostream>
 int result = 0;
+KeyPresser::KeyPresser * presser = nullptr;
 DWORD WINAPI testerA (LPVOID arg) {
     std::chrono::steady_clock::time_point start = std::chrono::steady_clock::now();
-    KeyPresser::holdKey(0x41, 2000);
+    presser->holdKey(0x41, 2000);
     std::chrono::duration<double> time_span = std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::steady_clock::now() - start);
     if (!((2 - time_span.count()) > -0.01 && (2 - time_span.count()) < 0.01)) {
         result++;
@@ -13,7 +14,7 @@ DWORD WINAPI testerA (LPVOID arg) {
     return 0;
 }
 int main() {
-    KeyPresser::setup();
+    presser = new KeyPresser::KeyPresser();
     TIMECAPS veryImportantTimerThing;
     timeGetDevCaps(&veryImportantTimerThing, sizeof(TIMECAPS));
     timeBeginPeriod(veryImportantTimerThing.wPeriodMin);

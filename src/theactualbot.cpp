@@ -50,6 +50,7 @@ TheActualBot::MiniBot::MiniBot(WORD key, std::vector<SongStuff::Note> notes) {
     notesVector = notes;
     keyToPress = key;
     shouldIStopYet = true;
+    presser = new KeyPresser::KeyPresser();
 }
 int TheActualBot::MiniBot::play() {
     shouldIStopYet = false;
@@ -59,9 +60,9 @@ int TheActualBot::MiniBot::play() {
     while (!shouldIStopYet && (inc < notesVector.size())) {
         if (std::chrono::duration_cast<std::chrono::microseconds>(rightNow - start).count() / 1000 >= notesVector.at(inc).time) {
             if (notesVector.at(inc).holdTime == 0) {
-                KeyPresser::pressKey(keyToPress);
+                presser->pressKey(keyToPress);
             } else {
-                KeyPresser::holdKey(keyToPress, static_cast<DWORD>(ceil(notesVector.at(inc).holdTime)));
+                presser->holdKey(keyToPress, static_cast<DWORD>(ceil(notesVector.at(inc).holdTime)));
             }
             inc++;
         }

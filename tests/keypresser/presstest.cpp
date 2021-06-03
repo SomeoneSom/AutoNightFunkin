@@ -3,13 +3,14 @@
 #include <stdio.h>
 #include <thread>
 int result = 0;
+KeyPresser::KeyPresser * presser = nullptr;
 void helper(WORD key) {
     Sleep(500);
-    KeyPresser::pressKey(key);
+    presser->pressKey(key);
 }
 void helper2(WORD key) {
     Sleep(1000);
-    KeyPresser::pressKey(key);
+    presser->pressKey(key);
 }
 DWORD WINAPI testerA(LPVOID arg) {
     std::thread helperThing(helper, 0x41);
@@ -23,7 +24,7 @@ DWORD WINAPI testerA(LPVOID arg) {
     return 0;
 }
 int main() {
-    KeyPresser::setup();
+    presser = new KeyPresser::KeyPresser();
     HANDLE h;
     DWORD id;
     h = CreateThread(NULL, 0, testerA, nullptr, 0, &id);
