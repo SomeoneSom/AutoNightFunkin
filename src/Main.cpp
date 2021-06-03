@@ -1,3 +1,6 @@
+/* main:
+this is what runs everything
+version 1.0.0 */
 #include <iostream>
 #include <windows.h>
 #include "lib/songstuff.hpp"
@@ -10,7 +13,6 @@
 #include <vector>
 #include <sstream>
 #include <filesystem>
-//its the main code, what a shocker
 double offset = 0;
 std::string filename = "temp.temp";
 bool started = false;
